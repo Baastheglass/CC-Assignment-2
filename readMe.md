@@ -50,5 +50,3 @@ sudo apt install llvm clang
 ### 3. Handling Integer Division
 - Challenge: Using `CreateFDiv` on integer types caused errors.
 - Solution: Used `CreateSDiv` for signed integer division instead.
-
-By resolving these challenges, the program successfully generates LLVM IR and executes as expected.
