@@ -8,7 +8,7 @@ The program utilizes the LLVM API to:
 - Create an `LLVMContext` and a `Module`.
 - Use an `IRBuilder` to construct LLVM IR instructions.
 - Define an arithmetic function that takes two integers and performs addition, subtraction, multiplication, and division.
-- Utilize LLVM's `printf` function for printing results.
+- Utilize LLVM's external linkage to link to C's `printf` function for printing results.
 - Create a `main` function that prints "Hello, World!" and calls the arithmetic function with constant values.
 - Print the generated LLVM IR to standard output.
 
@@ -22,8 +22,8 @@ sudo apt install llvm clang
 ### Steps
 1. **Clone the repository (if applicable):**
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone <https://github.com/Baastheglass/CC-Assignment-2.git>
+   cd <CC-Assignment-2>
    ```
 2. **Compile the program using Makefile:**
    ```bash
@@ -39,20 +39,16 @@ sudo apt install llvm clang
    ```
 
 ## Challenges and Solutions
-### 1. Linking LLVM Libraries
-- Challenge: Ensuring the correct LLVM libraries are linked.
-- Solution: Used `llvm-config` in the Makefile to dynamically obtain the necessary compiler flags and linker options.
+### 1. Downloading LLVM
+- Challenge: Finding the correct command to download LLVM was very time taking and difficult.
+- Solution: Scoured the internet for solutions.
 
-### 2. Using `CreateCall` with `printf`
-- Challenge: Properly calling `printf` within LLVM IR.
-- Solution: Defined a function signature for `printf` and used `CreateCall` with a format string to print values.
+### 2. Function returns from Arithmetic and Printf
+- Challenge: Trying to emit 4 values from the arithmetic function and using the printf functionality in LLVM.
+- Solution: Defined a function signature for `printf` and used `CreateCall` to print values.
 
 ### 3. Handling Integer Division
 - Challenge: Using `CreateFDiv` on integer types caused errors.
 - Solution: Used `CreateSDiv` for signed integer division instead.
 
 By resolving these challenges, the program successfully generates LLVM IR and executes as expected.
-
----
-This README provides an overview of the LLVM-based program, step-by-step compilation instructions, and insights into common issues encountered during development.
-
