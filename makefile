@@ -3,7 +3,7 @@ LLVM_CONFIG = llvm-config
 CXXFLAGS = `$(LLVM_CONFIG) --cxxflags` -std=c++17 -g -Wall
 LDFLAGS = `$(LLVM_CONFIG) --ldflags --libs core native` -lpthread
 
-SRC = mian.cpp
+SRC = main.cpp
 OUT = program
 
 all: $(OUT)
