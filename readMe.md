@@ -33,7 +33,18 @@ sudo apt install llvm clang
    ```bash
    make run
    ```
-4. **Clean up generated files (optional):**
+4. **Put the output into a .ll file:**
+   
+5. **Compile the .ll file:**
+   ```bash
+   clang <file_name>.ll -o <executable_name>
+   ```
+6. **Run IR:**
+   ```bash
+   ./<executable_name>
+   ```
+
+7. **Clean up generated files (optional):**
    ```bash
    make clean
    ```
